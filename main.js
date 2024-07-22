@@ -1,5 +1,6 @@
 import "./style.css";
 import { gsap } from "gsap";
+import { titles } from './titleData.js';
 
 document.querySelector("#app").innerHTML = /*html*/`
   <div class="container">
