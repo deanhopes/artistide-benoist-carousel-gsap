@@ -10,9 +10,9 @@
   -moz-osx-font-smoothing: grayscale;
 
   /* Colors */
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* color-scheme: light dark; */
+  /* color: rgba(255, 255, 255, 0.87); */
+  /* background-color: #242424; */
 }
 
 /* Reset */
@@ -97,10 +97,11 @@ body {
   width: 3000vw;
   height: 100vh;
   display: flex;
+  /* transition: transform 0.5s ease; */
 }
 
 .slide {
-  flex: 1;
+  flex: 0 0 auto;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -112,6 +113,9 @@ body {
   width: 50%;
   height: 50%;
   opacity: 0.75;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 img {
@@ -228,7 +232,7 @@ button:focus-visible {
   text-align: center;
 }
 
-/* Media Queries */
+/* Media Queries
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -242,7 +246,7 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
 
 @media (max-width: 900px) {
   .slider-nav {

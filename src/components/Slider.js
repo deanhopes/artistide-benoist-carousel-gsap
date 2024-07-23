@@ -22,9 +22,11 @@ export class Slider {
     }
 
     createSlides() {
+        const slideWidth = 100 / CONFIG.numberOfItems;
         for (let i = 0; i < CONFIG.numberOfItems; i++) {
             const slide = document.createElement("div");
             slide.classList.add("slide");
+            slide.style.width = `${slideWidth}%`;
             if (i === 0) {
                 slide.classList.add("active");
             }
@@ -97,7 +99,9 @@ export class Slider {
         document.querySelectorAll(".nav-item-wrapper").forEach((nav) => nav.classList.remove("active"));
         this.sliderNav.children[index].classList.add("active");
 
-        const translateXValue = -index * 100;
+        const slideWidth = 100 / CONFIG.numberOfItems;
+        const translateXValue = -index * slideWidth;
+
         gsap.to(this.slidesContainer, {
             x: `${translateXValue}vw`,
             duration: CONFIG.animationDuration,
