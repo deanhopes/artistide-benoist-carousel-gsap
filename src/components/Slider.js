@@ -42,6 +42,7 @@ export class Slider {
             slide.appendChild(imgWrapper);
             this.slidesContainer.appendChild(slide);
         }
+        this.slidesContainer.style.width = `${100 * CONFIG.numberOfItems}%`;
     }
 
     createNavigation() {
@@ -75,7 +76,7 @@ export class Slider {
                 }
 
                 const newSpan = document.createElement("span");
-                const direction = newIndex > this.currentIndex ? 150 : -150;
+                const direction = newIndex > this.currentIndex ? 300 : - 300;
                 gsap.set(newSpan, {
                     x: direction,
                     color: color
@@ -85,9 +86,9 @@ export class Slider {
                 letter.appendChild(newSpan);
                 gsap.to(newSpan, {
                     x: 0,
-                    duration: 1,
+                    duration: 0.8,
                     ease: "hop",
-                    delay: 0.125
+                    delay: CONFIG.animationDuration
                 });
             });
         });
@@ -103,7 +104,7 @@ export class Slider {
         const translateXValue = -index * slideWidth;
 
         gsap.to(this.slidesContainer, {
-            x: `${translateXValue}vw`,
+            x: `${translateXValue}%`,
             duration: CONFIG.animationDuration,
             ease: "hop"
         });
